@@ -21,12 +21,14 @@
 
 #include <stm/config.h>
 
-#if defined(STM_API_CXXTM)
-#  include <api/cxxtm.hpp>
-#elif defined(STM_API_STAMP)
-#  include <api/stamp.hpp>
-#else // default
-#  include <api/library.hpp>
-#endif
+#include <api/tinySTM.h>
+
+//#if defined(STM_API_CXXTM)
+//#  include <api/cxxtm.hpp>
+//#elif defined(STM_API_STAMP)
+//#  include <api/stamp.hpp>
+//#else // default
+//#  include <api/library.hpp>
+//#endif
 
 #endif // STM_API_HPP__

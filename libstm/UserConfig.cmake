@@ -85,7 +85,7 @@ mark_as_advanced(libstm_use_pthread_tls)
 ## Experimental: specify when adaptivity decisions are made
 ##               (begin/abort/commit, begin/abort, none)
 libstm_enum(
-  libstm_adaptation_points all
+  libstm_adaptation_points none
   "The instrumentation points that attempt to adapt automatically"
   all;none;begin-abort)
 

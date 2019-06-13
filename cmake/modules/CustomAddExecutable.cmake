@@ -51,7 +51,7 @@ endmacro ()
 ## Add a multiarch executable that depends on the stm target library.
 macro (add_stm_executable exec name arch)
   add_multiarch_executable(${exec} ${name} ${arch} ${ARGN})
-  target_link_libraries(${${exec}} stm${arch})
+  target_link_libraries(${${exec}} stm)
 endmacro ()
 
 ## Add a multiarch executable that uses Intel's itm library.

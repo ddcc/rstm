@@ -21,6 +21,8 @@ project(rstm C CXX)
 # that you can confirm works please contact us and we can update this
 # requirement.
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_policy(SET CMP0015 NEW)
+cmake_policy(SET CMP0081 OLD)
 
 set(PACKAGE rstm)
 
@@ -93,8 +95,9 @@ include_directories (
   ${CMAKE_BINARY_DIR}/include   # configured headers
   )
 
-add_subdirectory(include)     # configures stm/config.h.cmake
-add_subdirectory (libstm)     # the main library
+include_directories(../tinySTM/include)
+link_directories(../tinySTM/lib)
+
 if (rstm_enable_itm2stm)
   add_subdirectory (libitm2stm) # the shim library
 endif ()

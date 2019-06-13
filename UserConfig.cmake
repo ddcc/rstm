@@ -31,13 +31,13 @@ if (CMAKE_SIZEOF_VOID_P EQUAL 4)
   # 32-bit building is on by default
   option(
     rstm_build_32-bit
-    "Build 32-bit libraries and applications?" YES)
+    "Build 32-bit libraries and applications?" NO)
 
   # even if 64-bit is available, it is off by default
   cmake_dependent_option(
     rstm_build_64-bit
-    "Build 64-bit libraries and applications?" NO
-    "CXX_HAS_-m64" NO)
+    "Build 64-bit libraries and applications?" YES
+    "CXX_HAS_-m64" YES)
 
 ## Symmetric cases for 64-bit environment asking about building 32-bit code
 elseif (CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -70,7 +70,7 @@ cmake_dependent_option(
 ## Ask about building the stamp that we distribute in stamp-0.9.10
 option(
   rstm_enable_stamp
-  "ON to enable Stanford's STAMP benchmark suite." ON)
+  "ON to enable Stanford's STAMP benchmark suite." OFF)
 
 ## Ask about building the mesh application (only available for 32-bits)
 cmake_dependent_option(
